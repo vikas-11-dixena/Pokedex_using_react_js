@@ -1,0 +1,10 @@
+.search-wrapper {
+    width: 100%;
+}
+.search {
+    padding: 1rem;
+    width: 609px;
+    display: flex;
+    align-items: center;
+    font-family: "MuseoModerno", sans-serif;
+}

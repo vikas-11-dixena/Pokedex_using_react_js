@@ -1,0 +1,9 @@
+.pokedex-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.name {
+    text-align: center;
+    font-family: "MuseoModerno", sans-serif;
+}
