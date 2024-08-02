@@ -8,10 +8,10 @@ const PokemonList = () => {
     }
     useEffect(() => {
         downloadPokemon();
-    })
+    },[])
   return (
     <div className='pokemonList-wrapper'>
-      pokemonlist
+      Pokemon List
     </div>
   )
 }
