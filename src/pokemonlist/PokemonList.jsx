@@ -1,21 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./PokemonList.css";
+
 const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   async function downloadPokemon() {
     let response = await axios.get("https://pokeapi.co/api/v2/pokemon/");
-    console.log(response);
+    console.log("response", response);
     const pokemonResults = response.data.results;
     console.log(pokemonResults);
     const pokemonResultPromise = pokemonResults.map((pokemon) =>
       axios.get(pokemon.url)
     );
-    console.log(pokemonResultPromise);
+    console.log("result promise", pokemonResultPromise);
     const pokemonData = await axios.all(pokemonResultPromise);
-    console.log(pokemonData);
+    console.log("pokemon all data", pokemonData);
     const result = pokemonData.map((pokeData) => {
       const pokemon = pokeData.data;
       console.log(pokemon);
