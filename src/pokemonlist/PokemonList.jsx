@@ -18,27 +18,27 @@ const PokemonList = () => {
     // console.log("response", response);
     setIsLoading(true);
     const response = await axios.get(pokedexUrl);
-    console.log("response =>", response);
+    // console.log("response =>", response);
     
 
     const pokemonResults = response.data.results;
-    console.log(response.data);
+    // console.log(response.data);
     setNextUrl(response.data.next);
     setPrevUrl(response.data.previous);
     
-    console.log("response => data => results data show on console =>", pokemonResults);
+    // console.log("response => data => results data show on console =>", pokemonResults);
 
     const pokemonResultPromise = pokemonResults.map((pokemon) =>
       axios.get(pokemon.url)
     );
-    console.log("result promise", pokemonResultPromise);
+    // console.log("result promise", pokemonResultPromise);
 
     const pokemonData = await axios.all(pokemonResultPromise);
-    console.log("pokemon all data", pokemonData);
+    // console.log("pokemon all data", pokemonData);
 
     const result = pokemonData.map((pokeData) => {
       const pokemon = pokeData.data;
-      console.log(pokemon);
+      // console.log(pokemon);
 
       return {
         id: pokemon.id,
@@ -47,7 +47,7 @@ const PokemonList = () => {
         types: pokemon.types,
       };
     });
-    console.log(result);
+    // console.log(result);
     setPokemonList(result);
     setIsLoading(false);
   }
