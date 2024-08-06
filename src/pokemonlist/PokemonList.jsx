@@ -7,20 +7,27 @@ const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const POKEDEX_URL = "https://pokeapi.co/api/v2/pokemon/";
+
   async function downloadPokemon() {
-    let response = await axios.get("https://pokeapi.co/api/v2/pokemon/");
+    let response = await axios.get(POKEDEX_URL);
     console.log("response", response);
+
     const pokemonResults = response.data.results;
     console.log(pokemonResults);
+
     const pokemonResultPromise = pokemonResults.map((pokemon) =>
       axios.get(pokemon.url)
     );
     console.log("result promise", pokemonResultPromise);
+
     const pokemonData = await axios.all(pokemonResultPromise);
     console.log("pokemon all data", pokemonData);
+
     const result = pokemonData.map((pokeData) => {
       const pokemon = pokeData.data;
       console.log(pokemon);
+
       return {
         id: pokemon.id,
         name: pokemon.name,
@@ -36,12 +43,18 @@ const PokemonList = () => {
     downloadPokemon();
   }, []);
   return (
-    <div className="pokemonList-wrapper">
-      <div>Pokemon List</div>
-      {/* {isLoading ? "Loading...." : "Data download"} */}
-      {(isLoading) ? 'Loading...' : 'Data download'}
-      {(isLoading) ? 'Loading...' : 
-                pokemonList.map((p) => <Pokemon name={p.name} image={p.image} key={p.id} />)}
+    <div className="pokemon-list-wrapper">
+      <div className="pokemon-wrapper">
+        {isLoading
+          ? "Loading..."
+          : pokemonList.map((p) => (
+              <Pokemon name={p.name} image={p.image} key={p.id} />
+            ))}
+      </div>
+      <div className="controls">
+        <button>Prev</button>
+        <button>Next</button>
+      </div>
     </div>
   );
 };
