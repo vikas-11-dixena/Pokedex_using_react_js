@@ -10,14 +10,12 @@
 .pokemon-name {
     font-size: large;
     letter-spacing: 0.2rem;
+    color: black;
 }
 .pokemon-img {
     margin-top: 1rem;
     height: 150px;
     max-height: 80%;
-}
-.pokemon-images {
-    height: 150px;
 }
 .pokemon:hover {
     background-color: bisque;

@@ -4,8 +4,9 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div className="app">
+    <div>
       <Pokedex />
+      <customRoutes />
     </div>
   );
 };
