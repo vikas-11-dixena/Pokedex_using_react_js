@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Pokemon.css";
 
-const Pokemon = ({ name, image }) => {
+const Pokemon = ({ name, image, id }) => {
   return (
     <div className="pokemon">
       {/* <div className="pokemon-name">{name}</div>
