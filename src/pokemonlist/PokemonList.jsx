@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./PokemonList.css";
+import Pokemon from "../Pokemon/Pokemon";
 
 const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([]);
@@ -21,6 +22,7 @@ const PokemonList = () => {
       const pokemon = pokeData.data;
       console.log(pokemon);
       return {
+        id: pokemon.id,
         name: pokemon.name,
         image: pokemon.sprites.other.dream_world.front_default,
         types: pokemon.types,
@@ -36,7 +38,10 @@ const PokemonList = () => {
   return (
     <div className="pokemonList-wrapper">
       <div>Pokemon List</div>
-      {isLoading ? "Loading...." : "Data download"}
+      {/* {isLoading ? "Loading...." : "Data download"} */}
+      {(isLoading) ? 'Loading...' : 'Data download'}
+      {(isLoading) ? 'Loading...' : 
+                pokemonList.map((p) => <Pokemon name={p.name} image={p.image} key={p.id} />)}
     </div>
   );
 };
