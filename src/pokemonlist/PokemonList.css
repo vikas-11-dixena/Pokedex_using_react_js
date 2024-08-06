@@ -12,6 +12,9 @@
 }
 .controls {
     margin-top: 2rem;
+    /* align-items: center;
+    justify-content: center; */
+    padding: 0 660px;
 }
 .controls button {
     padding: 0.4rem 1.3rem;

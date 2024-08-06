@@ -1,10 +1,14 @@
-const Pokemon = ({name, image}) => {
-    return (
-        <div className="pokemon">
-            <div className="pokemon-name">{name}</div>
-            <div className="pokemon-img"><img src={image} alt="" /></div>
-        </div>
-    )
-}
+import "./Pokemon.css";
 
-export default Pokemon
+const Pokemon = ({ name, image }) => {
+  return (
+    <div className="pokemon">
+      <div className="pokemon-name">{name}</div>
+      <div className="pokemon-img">
+        <img className="pokemon-images" src={image} alt="" />
+      </div>
+    </div>
+  );
+};
+
+export default Pokemon;

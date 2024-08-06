@@ -16,6 +16,9 @@
     height: 150px;
     max-height: 80%;
 }
+.pokemon-images {
+    height: 150px;
+}
 .pokemon:hover {
     background-color: bisque;
     cursor: pointer;
