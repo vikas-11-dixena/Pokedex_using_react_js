@@ -4,13 +4,13 @@
     align-items: center;
     justify-content: center;
 }
-.search {
+.search:focus {
+    outline: none;
+}
+#pokemon-name-search {
     padding: 1rem;
     width: 609px;
     display: flex;
     align-items: center;
     font-family: "MuseoModerno", sans-serif;
-}
-.search:focus {
-    outline: none;
 }

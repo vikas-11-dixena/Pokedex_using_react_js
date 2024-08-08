@@ -7,13 +7,7 @@ function Search({ search, setSearch }) {
 
   return (
     <div className="search-wrapper">
-      <input
-        id="pokemon-name-search"
-        type="text"
-        placeholder="pokemon name..."
-        value={search}
-        onChange={handleChange}
-      />
+      <input id="pokemon-name-search" type="text" placeholder="pokemon name..." value={search} onChange={handleChange} />
     </div>
   );
 }

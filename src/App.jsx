@@ -2,6 +2,7 @@ import React from "react";
 import Pokedex from "./pokedex/Pokedex";
 import "./App.css";
 import { Link } from "react-router-dom";
+import CustomRoutes from "./routes/CustomRoutes";
 
 const App = () => {
   return (
@@ -9,7 +10,7 @@ const App = () => {
       <h1 id="pokedex-heading">
         <Link className="pokedex-heading" to="/">Pokedex</Link>
       </h1>
-      <customRoutes />
+      <CustomRoutes />
     </div>
   );
 };
